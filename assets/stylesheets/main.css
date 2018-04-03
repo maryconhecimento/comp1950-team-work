@@ -1,0 +1,182 @@
+/*
+Author: Pin-Chen, Chen
+*/
+body {
+  font: 300 16px/22px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 200%;
+  color: #666666;
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.container {
+  display: grid;
+  position: relative;
+  grid-template-columns: auto 15vw;
+  grid-template-rows: 15vh 85vh auto;
+  grid-template-areas: "header header"  "section nav" "footer footer";
+}
+
+header {
+  text-align: center;
+  grid-area: header;
+  background: #1e89c6;
+}
+
+nav {
+  background: #1b4977;
+  font-size: 2em;
+  grid-area: nav;
+  text-align: left;
+  padding: 20px;
+  line-height: 100%;
+}
+
+nav ul li {
+  padding: 20px;
+  font-weight: 100;
+}
+
+section {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background: #CCCCCC;
+  grid-area: section;
+}
+
+footer {
+  grid-area: footer;
+  background: #999;
+}
+
+.little {
+  font-size: 12px;
+  margin: 0 auto;
+  padding: 40px 0 22px 0;
+  text-align: center;
+}
+
+#logo {
+  text-align: center;
+  line-height: 10vh;
+  font-size: 48px;
+  font-weight: 100;
+  text-transform: uppercase;
+}
+
+h1, h2, h3 {
+  color: #336699;
+}
+
+p {
+  padding: 20px;
+  text-indent: 20px;
+  line-height: 120%;
+  font-weight: 100;
+}
+
+a {
+  padding: 5px 10px;
+  color: white;
+  /* add transition */
+  transition: background 1s ease;
+  text-decoration: none;
+  color: #e6e6e6;
+}
+
+nav a:focus,
+nav a:hover,
+nav a:active {
+  background-color: #6699CC;
+}
+
+input {
+  width: 100px;
+}
+
+.data {
+  text-align: left;
+  width: 90%;
+  margin: 0 auto;
+}
+
+section h2 {
+  text-align: center;
+  width: 20%;
+  margin: 0 auto;
+}
+
+figure {
+  padding: 20px;
+  text-align: center;
+}
+
+figure img {
+  width: 30vw;
+}
+
+/* 
+    Smartphones
+*/
+@media screen and (max-width: 499px) {
+  body {
+    background-color: teal;
+  }
+  nav ul li {
+    display: block;
+    padding: 20px;
+    font-weight: 100;
+  }
+}
+
+/*
+    Desktops
+*/
+@media screen and (min-width: 500px) {
+  body {
+    background-color: yellow;
+    color: black;
+  }
+}
+
+/* Printers */
+@media print {
+  header {
+    background-color: none;
+    color: black;
+    text-shadow: none;
+  }
+  #logo {
+    line-height: 100%;
+  }
+  nav {
+    display: none;
+  }
+  #transition_image {
+    display: none;
+  }
+  figure img {
+    width: 20%;
+  }
+  a[href^="http"]:after {
+    content: "URL: (" attr(href) ")";
+  }
+  h1, h2, h3, h4, h5, h6 {
+    page-break-after: avoid;
+  }
+  section ~ section {
+    page-break-before: always;
+  }
+  footer {
+    display: none;
+  }
+  .mask-img {
+    display: none;
+  }
+}
