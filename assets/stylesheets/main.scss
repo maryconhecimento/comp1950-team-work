@@ -1,6 +1,11 @@
 /*
 Author: Pin-Chen, Chen
 */
+$primary_color: #CCCCCC;
+$secondary_color: #1e89c6;
+$accent_color: #1b4977;
+$comfy-color: #99CCCC;
+$header-color: #6699CC;
 
 body{
     font: 300 16px/22px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -16,60 +21,69 @@ body{
 }
 .container{
     display: grid;
-    position: relative;
+    position: relative; 
     grid-template-columns: auto 15vw;
-    grid-template-rows: 15vh 85vh auto;
+    grid-template-rows: 15vh auto auto;
     grid-template-areas: "header header" 
-                         "section nav"
-                         "footer footer";
+                         "main nav"
+                         "footer nav";
 }
 
 header{
-    text-align: center;
     grid-area: header;
-    background: #1e89c6;
+    background: $secondary_color;
 }
 nav{
-    // position: fixed;
-    // right:0px;
-    background: #1b4977;
+    position: fixed;
+    width:15vw;
+    right:0px;
+    background: $accent_color;
     font-size: 2em;
     grid-area: nav;
     text-align: left;
     padding: 20px;
     line-height: 100%;
+    height: 100vh;
 }
 
 nav ul li{
     padding: 20px;
     font-weight: 100;
 }
-section{
-    padding-top:20px;
-    padding-bottom: 20px;
-    background: #CCCCCC;
-    grid-area: section;
+
+main{
+    padding:20px;
+    background: $primary_color;
+    grid-area: main;
 }
 
 footer{
+    text-align: center;
     grid-area: footer;
-    
-    background:#999;
-}
-.little{
-    font-size:12px;
-    margin: 0 auto;
-    padding: 40px 0 22px 0;
-    text-align: center; 
+    background: $comfy-color;
 }
 
+
 #logo {
-    text-align: center;
+    padding: 20px;
     line-height: 10vh;
-    font-size: 48px;
-    font-weight: 100;
+    font-size: 3.5em;
+    font-weight: 200;
+    text-shadow: -1px 0 $primary_color, 0 1px $primary_color, 1px 0 $primary_color, 0 -1px $primary_color;
     text-transform: uppercase;
+    letter-spacing: 0.01em;
 }
+#logo:first-letter{
+    font-weight:300;
+    font-size: 1.5em;
+}
+#icon{
+    text-align: center;
+    padding: 20px;
+    line-height: 15vh;
+    height: 15vh;
+}  
+
 h1, h2, h3{
     color: #336699;
 }
@@ -80,33 +94,45 @@ p{
     font-weight: 100;
 }
 a{
-    padding:5px 10px;
-	color:white;
+    color:$accent_color;
+
 	/* add transition */
 	transition:background 1s ease;
     text-decoration: none;
-    color:#e6e6e6;
-    
 }
-nav a:focus,
-nav a:hover,
-nav a:active {
+nav a{
+    color:white;
+}
+a:focus,
+a:hover,
+a:active {
 	background-color: #6699CC;
 }
-
-input{
-    width: 100px;
+article{
+    
+    background: white;
 }
-.data{
-    text-align: left;
-    width: 90%;
-    margin:0 auto;
-}
-
 section h2{
-    text-align: center;
-    width: 20%;
-    margin: 0 auto;
+    text-indent: 1em;
+    font-size: 1.5em;
+    line-height: 150%;
+    background: $header-color;
+}
+
+section ul li{
+    text-indent:10px;
+    list-style: disc inside;
+}
+code{
+    color:#990033;
+    font-weight:500;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+textarea{
+    width:90%;
+    height:170px;
+    padding:20px;
+    margin:10px 50px;
 }
 
 
