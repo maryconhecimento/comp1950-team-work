@@ -91,6 +91,10 @@ p {
   font-weight: 100;
 }
 
+h3 ~ p {
+  text-indent: 0px;
+}
+
 a {
   color: #1b4977;
   /* add transition */
