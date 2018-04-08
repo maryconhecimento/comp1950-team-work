@@ -61,15 +61,17 @@ footer {
 #logo {
   padding: 20px;
   line-height: 10vh;
-  font-size: 3.5em;
-  font-weight: 200;
-  text-shadow: -1px 0 #CCCCCC, 0 1px #CCCCCC, 1px 0 #CCCCCC, 0 -1px #CCCCCC;
+  font-size: 3em;
+  font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.01em;
+  color: #ffffff;
+  font-family: 'Raleway',sans-serif;
+  margin: 0 0 24px;
 }
 
 #logo:first-letter {
-  font-weight: 300;
+  font-weight: 1000;
   font-size: 1.5em;
 }
 
@@ -163,17 +165,43 @@ figure img {
   width: 30vw;
 }
 
+form {
+  padding: 20px;
+  text-indent: 20px;
+  line-height: 120%;
+  font-weight: 100;
+}
+
+form input {
+  padding: 20px;
+}
+
 /* 
     Smartphones
 */
 @media screen and (max-width: 499px) {
   body {
+    font-size: 0.5em;
     background-color: teal;
   }
+  header {
+    width: auto;
+  }
+  nav {
+    text-align: center;
+    position: relative;
+    width: auto;
+    right: auto;
+    height: auto;
+    padding: 0px;
+  }
   nav ul li {
-    display: block;
-    padding: 20px;
-    font-weight: 100;
+    line-height: 70%;
+    font-size: 2em;
+  }
+  .container {
+    grid-template-columns: 100vw;
+    grid-template-areas: "header"  "nav" "main" "footer";
   }
 }
 
@@ -188,6 +216,10 @@ figure img {
 
 /* Printers */
 @media print {
+  .container {
+    grid-template-columns: 100vw;
+    grid-template-areas: "header"  "main";
+  }
   header {
     background-color: none;
     color: black;
