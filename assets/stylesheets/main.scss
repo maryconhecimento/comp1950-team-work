@@ -108,8 +108,11 @@ a:hover,
 a:active {
 	background-color: #6699CC;
 }
+.hide li{
+    font-size:0.5em;
+    line-height: 100%;
+}
 article{
-    
     background: white;
 }
 section h2{
@@ -134,7 +137,14 @@ textarea{
     padding:20px;
     margin:10px 50px;
 }
+.hide {
 
+    display: none;
+   
+}
+.notice{
+    color:#990033;
+}
 
 figure{
     padding:20px;
@@ -161,7 +171,7 @@ figure img{
     Desktops
 */
 @media screen and (min-width:500px){
-	body{	background-color:yellow;	color:black; }
+	body{	background-color:whitesmoke;}
 }
 
 /* Printers */
@@ -170,22 +180,18 @@ figure img{
         background-color: none;
         color:black;
         text-shadow:none;
+        font-size:0.5em;
     }
     #logo {
         line-height: 100%;
     }
     nav{display:none;}
-    #transition_image{display:none;}
-    figure img{width:20%;}
     a[href^="http"]:after{
 		content:"URL: (" attr(href) ")";		
     }
     h1, h2, h3, h4, h5, h6{
 		page-break-after:avoid;
 	}
-	section ~ section{
-		page-break-before:always;
-    }
+	
     footer{display:none;}
-    .mask-img{display: none;}
 }
